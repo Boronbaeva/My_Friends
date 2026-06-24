@@ -1,0 +1,1631 @@
+:root{
+    --accent:#4682B4;
+    --bg:#05070C;
+    --panel:#11151C;
+    --panel2:#171C24;
+    --text:#D9E3EE;
+    --muted:#8C98A8;
+}
+
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:Consolas, monospace;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    background:
+        radial-gradient(circle at 50% -10%,
+        rgba(255,255,255,.08),
+        transparent 45%);
+    z-index:-2;
+}
+
+
+
+#stars{
+    position:fixed;
+    inset:0;
+    background-image:
+        radial-gradient(rgba(255,255,255,.35) 1px,transparent 1px);
+    background-size:48px 48px;
+    opacity:.12;
+    animation:starsMove 80s linear infinite;
+    z-index:-1;
+}
+
+@keyframes starsMove{
+    from{background-position:0 0;}
+    to{background-position:0 1200px;}
+}
+
+#boot,
+#welcome,
+#selectFriend,
+#menu,
+#journey,
+#ending{
+    position:absolute;
+    inset:0;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    background:transparent;
+    transition:.6s;
+}
+
+#boot{
+
+    width:700px;
+
+    margin:0 auto;
+
+    transform:translateX(80px);
+
+}
+
+#boot.hide,
+#welcome,
+#menu,
+#journey,
+#ending,
+#selectFriend{
+    opacity:0;
+    pointer-events:none;
+}
+
+#welcome.active,
+#menu.active,
+#journey.active,
+#ending.active,
+#selectFriend.active{
+    opacity:1;
+    pointer-events:auto;
+}
+
+.logo{
+    font-size:64px;
+    font-weight:700;
+    color:var(--accent);
+    letter-spacing:4px;
+    margin-bottom:45px;
+    animation:glow 3s ease-in-out infinite;
+}
+
+@keyframes glow{
+    0%,100%{
+        text-shadow:0 0 10px var(--accent);
+    }
+    50%{
+        text-shadow:
+        0 0 20px var(--accent),
+        0 0 45px var(--accent);
+    }
+}
+
+#terminal{
+
+    min-height:180px;
+
+    width:100%;
+
+    font-size:24px;
+
+    color:#C5CFDA;
+
+    line-height:1.7;
+
+    letter-spacing:1px;
+
+    text-align:center;
+
+}
+#cursor{
+    animation:blink .8s infinite;
+}
+
+@keyframes blink{
+    50%{
+        opacity:0;
+    }
+}
+
+#progress{
+    width:100%;
+    height:6px;
+    background:#161A21;
+    border-radius:50px;
+    overflow:hidden;
+    margin-top:30px;
+}
+
+#bar{
+    width:0%;
+    height:100%;
+    border-radius:50px;
+    background:linear-gradient(
+        90deg,
+        var(--accent),
+        white,
+        var(--accent)
+    );
+}
+
+#enterBtn{
+    display:none;
+    margin-top:40px;
+    width:230px;
+    padding:16px;
+    border-radius:14px;
+    background:rgba(255,255,255,.03);
+    border:1px solid rgba(255,255,255,.12);
+    color:white;
+    font-size:18px;
+    letter-spacing:2px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+#enterBtn:hover{
+    transform:translateY(-2px);
+    background:var(--accent);
+    box-shadow:0 0 25px color-mix(in srgb,var(--accent) 45%,transparent);
+}
+
+#welcomeTitle{
+    font-size:60px;
+    color:var(--accent);
+    margin-bottom:20px;
+}
+
+#welcomeText{
+    color:#B7C3D3;
+    font-size:22px;
+}
+
+#selectFriend h1{
+    font-size:56px;
+    color:var(--accent);
+    margin-bottom:45px;
+}
+
+#friendList{
+    display:grid;
+    grid-template-columns:repeat(2, 260px);
+    gap:30px;
+    justify-content:center;
+    margin-top:50px;
+}
+
+.friendCard{
+    padding:28px;
+    border-radius:20px;
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.08);
+    backdrop-filter:blur(10px);
+    text-align:center;
+    cursor:pointer;
+    transition:.35s;
+}
+
+.friendCard:hover{
+    transform:translateY(-8px);
+    border-color:var(--accent);
+    box-shadow:
+        0 0 30px color-mix(in srgb,var(--accent) 35%,transparent);
+}
+
+.friendAvatar{
+    width:110px;
+    height:110px;
+    border-radius:50%;
+    object-fit:cover;
+    border:3px solid var(--accent);
+    margin-bottom:18px;
+}
+
+.friendCard h2{
+    color:var(--accent);
+    margin-bottom:10px;
+    font-size:28px;
+}
+
+.friendCard p{
+    color:#94A3B8;
+}
+
+
+#menu{
+    gap:18px;
+}
+
+#menu h1{
+    color:var(--accent);
+    font-size:56px;
+    margin-bottom:35px;
+}
+
+.menuBtn{
+    width:320px;
+    padding:18px;
+    border-radius:16px;
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.08);
+    color:white;
+    font-size:21px;
+    cursor:pointer;
+    transition:.3s;
+    backdrop-filter:blur(8px);
+}
+
+.menuBtn:hover{
+    transform:translateY(-4px);
+    background:var(--accent);
+    border-color:var(--accent);
+    box-shadow:0 0 30px color-mix(in srgb,var(--accent) 45%,transparent);
+}
+
+#journey{
+    flex-direction:row;
+    gap:90px;
+    padding:70px;
+}
+
+.photoStack{
+    position:relative;
+    width:420px;
+    height:560px;
+}
+
+#photoBack{
+    position:absolute;
+    inset:0;
+
+    object-fit:cover;
+
+    width:100%;
+    height:100%;
+
+    border-radius:22px;
+
+    opacity:.3;
+
+    transform:
+        rotate(-8deg)
+        translate(-20px,18px);
+
+    border:2px solid rgba(255,255,255,.06);
+}
+
+.backPhoto{
+    position:absolute;
+
+    inset:0;
+
+    border-radius:22px;
+
+    background:rgba(255,255,255,.03);
+
+    transform:
+        rotate(7deg)
+        translate(20px,-10px);
+
+    border:2px solid rgba(255,255,255,.04);
+}
+
+#photo{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    border-radius:22px;
+
+    border:2px solid rgba(255,255,255,.08);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.55),
+        0 0 35px color-mix(in srgb,var(--accent) 35%,transparent);
+
+    transform:rotate(3deg);
+
+    transition:.7s;
+
+    animation:photoGlow 5s ease-in-out infinite;
+}
+
+#photo:hover{
+
+    transform:
+        rotate(0deg)
+        scale(1.03);
+
+}
+
+#memoryBox{
+
+    width:430px;
+
+}
+
+#memoryBox h2{
+
+    color:var(--accent);
+
+    margin-bottom:22px;
+
+    font-size:30px;
+
+}
+
+#memoryText{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+    max-height:470px;
+
+    overflow-y:auto;
+
+    padding-right:10px;
+
+}
+
+.memoryCard{
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-left:4px solid var(--accent);
+
+    border-radius:18px;
+
+    padding:18px;
+
+    animation:cardAppear .6s;
+
+}
+
+.memoryTitle{
+
+    color:var(--accent);
+
+    margin-bottom:10px;
+
+    font-size:15px;
+
+}
+
+.memoryBody{
+
+    color:#C8D2DD;
+
+    line-height:1.8;
+
+}
+
+.fade{
+
+    animation:fade .6s;
+
+}
+
+.slide{
+
+    animation:photoIn .8s;
+
+}
+
+@keyframes fade{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+
+}
+
+@keyframes photoIn{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            scale(.9)
+            rotate(8deg);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            scale(1)
+            rotate(3deg);
+
+    }
+
+}
+
+@keyframes cardAppear{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes photoGlow{
+
+    0%,100%{
+
+        box-shadow:
+            0 30px 80px rgba(0,0,0,.55),
+            0 0 20px color-mix(in srgb,var(--accent) 25%,transparent);
+
+    }
+
+    50%{
+
+        box-shadow:
+            0 30px 80px rgba(0,0,0,.55),
+            0 0 60px color-mix(in srgb,var(--accent) 60%,transparent);
+
+    }
+
+}
+
+#memoryText::-webkit-scrollbar{
+
+    width:6px;
+
+}
+
+#memoryText::-webkit-scrollbar-thumb{
+
+    background:var(--accent);
+
+    border-radius:30px;
+
+}
+
+#timeline{
+
+    position:absolute;
+
+    bottom:200px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+}
+
+.timelineDot{
+
+    width:18px;
+
+    height:18px;
+
+    border-radius:50%;
+
+    background:#2B3340;
+
+    border:2px solid #3A4453;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+.timelineDot:hover{
+
+    transform:scale(1.25);
+
+}
+
+.timelineDot.active{
+
+    background:var(--accent);
+
+    border-color:var(--accent);
+
+    box-shadow:
+        0 0 20px var(--accent);
+
+}
+
+.timelineLine{
+
+    width:55px;
+
+    height:2px;
+
+    background:#39414D;
+
+}
+
+#playerUI{
+
+    position:absolute;
+
+    bottom:10px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:460px;
+
+    padding:20px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(10px);
+
+}
+
+#songName{
+
+    color:var(--accent);
+
+    font-size:19px;
+
+    margin-bottom:15px;
+
+}
+
+#progressBar{
+
+    width:100%;
+
+    height:6px;
+
+    background:#232A34;
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+}
+
+#progressFill{
+
+    width:0%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        var(--accent),
+        white,
+        var(--accent)
+    );
+
+}
+
+#time{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-top:12px;
+
+    color:#8E9AA8;
+
+    font-size:14px;
+
+}
+
+#controls{
+
+    position:absolute;
+
+    bottom:35px;
+
+    right:35px;
+
+    display:flex;
+
+    gap:14px;
+
+}
+
+#controls button,
+
+.backBtn,
+
+#restartBtn{
+
+    display:block;
+
+    padding:14px 24px;
+
+    background:rgba(255,255,255,.04);
+
+    color:white;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    backdrop-filter:blur(8px);
+
+}
+
+#controls button:hover,
+
+.backBtn:hover,
+
+#restartBtn:hover{
+
+    background:var(--accent);
+
+    border-color:var(--accent);
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 0 25px color-mix(in srgb,var(--accent) 45%,transparent);
+
+}
+
+.backBtn{
+
+    position:absolute;
+
+    top:25px;
+
+    left:25px;
+
+    z-index:100;
+
+}
+
+#ending{
+
+    text-align:center;
+
+    padding:60px;
+
+}
+
+#ending h1{
+
+    color:var(--accent);
+
+    font-size:64px;
+
+    margin-bottom:35px;
+
+}
+
+#letter{
+
+    width:min(760px,90vw);
+
+    margin-bottom:45px;
+
+    color:#D5DEE8;
+
+    font-size:22px;
+
+    line-height:1.9;
+
+    white-space:pre-line;
+
+}
+
+#restartBtn{
+
+    min-width:230px;
+
+    font-size:18px;
+
+}
+
+/* ========= PETALS ========= */
+
+#petals{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:0;
+
+}
+
+.petal{
+
+    position:absolute;
+
+    top:-40px;
+
+    width:16px;
+
+    height:16px;
+
+    background:var(--accent);
+
+    opacity:.45;
+
+    border-radius:
+        65% 35%
+        70% 30%;
+
+    filter:blur(.2px);
+
+    animation:fall linear forwards;
+
+}
+
+@keyframes fall{
+
+    from{
+
+        transform:
+            translateY(-50px)
+            rotate(0deg)
+            scale(.7);
+
+    }
+
+    to{
+
+        transform:
+            translateY(120vh)
+            translateX(120px)
+            rotate(720deg)
+            scale(1.15);
+
+    }
+
+}
+
+/* ========= GLASS ========= */
+
+.friendCard,
+.menuBtn,
+#playerUI,
+.memoryCard{
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+}
+
+/* ========= SCROLL ========= */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#111;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--accent);
+
+    border-radius:50px;
+
+}
+
+/* ========= SELECTION ========= */
+
+::selection{
+
+    background:var(--accent);
+
+    color:white;
+
+}
+
+/* ========= SMOOTH ========= */
+
+img{
+
+    user-select:none;
+
+    -webkit-user-drag:none;
+
+}
+
+/* ========= BUTTON EFFECT ========= */
+
+button{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+button::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:60%;
+
+    height:100%;
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            transparent,
+
+            rgba(255,255,255,.28),
+
+            transparent
+
+        );
+
+    transition:.7s;
+
+}
+
+button:hover::before{
+
+    left:150%;
+
+}
+
+/* ========= PHOTO ========= */
+
+#photo{
+
+    will-change:transform;
+
+}
+
+#photo:hover{
+
+    box-shadow:
+
+        0 35px 90px rgba(0,0,0,.55),
+
+        0 0 80px color-mix(in srgb,var(--accent) 50%,transparent);
+
+}
+
+/* ========= FRIEND ========= */
+
+.friendAvatar{
+
+    transition:.35s;
+
+}
+
+.friendCard:hover .friendAvatar{
+
+    transform:
+
+        scale(1.1)
+
+        rotate(3deg);
+
+}
+
+/* ========= MENU ========= */
+
+.menuBtn{
+
+    letter-spacing:1px;
+
+    font-weight:600;
+
+}
+
+/* ========= BOOT ========= */
+
+.logo{
+
+    letter-spacing:5px;
+
+}
+
+#terminal{
+
+    opacity:.9;
+
+}
+
+/* ========= MEMORY ========= */
+
+.memoryCard{
+
+    transition:.35s;
+
+}
+
+.memoryCard:hover{
+
+    transform:
+
+        translateX(6px);
+
+    border-left-width:7px;
+
+}
+
+/* ========= STATUS ========= */
+
+#statusText{
+
+    color:var(--accent);
+
+    font-size:15px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+}
+
+/* ========= END ========= */
+
+#ending{
+
+    background:
+
+        radial-gradient(
+
+            circle,
+
+            rgba(255,255,255,.03),
+
+            transparent 70%
+
+        );
+
+}
+
+/* ========= MOBILE ========= */
+
+@media (max-width:900px){
+
+    #journey{
+
+        flex-direction:column;
+
+        gap:35px;
+
+        padding:25px;
+
+    }
+
+    .photoStack{
+
+        width:300px;
+
+        height:410px;
+
+    }
+
+    #memoryBox{
+
+        width:90%;
+
+    }
+
+    #playerUI{
+
+        width:90%;
+
+    }
+
+    #friendList{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+
+#playlist{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:.5s;
+
+}
+
+#playlist.active{
+
+    opacity:1;
+
+    pointer-events:auto;
+
+}
+
+#playlist h1{
+
+    color:var(--accent);
+
+    font-size:58px;
+
+    margin-bottom:45px;
+
+}
+
+#songList{
+
+    width:700px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+.songCard{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:25px;
+
+    padding:18px;
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:18px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.songCard:hover{
+
+    transform:translateX(10px);
+
+    background:rgba(255,255,255,.08);
+
+    border-color:var(--accent);
+
+    box-shadow:
+        0 0 20px color-mix(in srgb,var(--accent) 30%,transparent);
+
+}
+
+.songNumber{
+
+    width:40px;
+
+    font-size:24px;
+
+    color:var(--accent);
+
+    text-align:center;
+
+}
+
+.songInfo h2{
+
+    color:white;
+
+    font-size:22px;
+
+}
+
+.songInfo p{
+
+    color:#9DA9B8;
+
+    margin-top:5px;
+
+}
+
+.songPlay{
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(255,255,255,.06);
+
+    color:var(--accent);
+
+    font-size:18px;
+
+    transition:.3s;
+
+}
+
+.songCard:hover .songPlay{
+
+    background:var(--accent);
+
+    color:white;
+
+}
+
+.equalizer{
+
+    width:36px;
+
+    height:28px;
+
+    display:flex;
+
+    align-items:flex-end;
+
+    gap:4px;
+
+}
+
+.equalizer span{
+
+    width:6px;
+
+    height:8px;
+
+    border-radius:20px;
+
+    background:var(--accent);
+
+    animation:equalizer .8s infinite;
+
+    animation-play-state:paused;
+
+}
+
+.equalizer span:nth-child(2){
+
+    animation-delay:.2s;
+
+}
+
+.equalizer span:nth-child(3){
+
+    animation-delay:.4s;
+
+}
+
+.activeSong .equalizer span{
+
+    animation-play-state:running;
+
+}
+
+@keyframes equalizer{
+
+    0%{
+        height:8px;
+    }
+
+    50%{
+        height:24px;
+    }
+
+    100%{
+        height:10px;
+    }
+
+}
+
+#letterPage{
+
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+
+    background:#09090B;
+
+    opacity:0;
+    pointer-events:none;
+
+    transition:.8s;
+
+}
+
+#letterPage.active{
+
+    opacity:1;
+    pointer-events:auto;
+
+}
+
+#envelope{
+
+    position:relative;
+
+    width:320px;
+    height:220px;
+
+    cursor:pointer;
+
+    transition:.8s;
+
+}
+
+#envelopeFront{
+
+    position:absolute;
+
+    bottom:0;
+
+    width:100%;
+    height:160px;
+
+    background:#f5f1e8;
+
+    border-radius:0 0 12px 12px;
+
+}
+
+#envelopeFlap{
+
+    position:absolute;
+
+    width:100%;
+    height:160px;
+
+    background:#ece4d7;
+
+    clip-path:polygon(0 0,100% 0,50% 100%);
+
+    transform-origin:top;
+
+    transition:1s;
+
+}
+
+#letterPaper{
+
+	
+    pointer-events:none;
+
+
+    position:absolute;
+
+    width:520px;
+    max-width:90%;
+
+    min-height:500px;
+
+    padding:40px;
+
+    background:#fdfaf3;
+
+    color:#222;
+
+    border-radius:12px;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.45);
+
+    opacity:0;
+
+    transform:translateY(120px);
+
+    transition:1s;
+
+}
+
+#letterPaper.open{
+
+    opacity:1;
+
+    transform:translateY(-20px);
+
+}
+
+#letterPaper h2{
+
+    margin-bottom:25px;
+
+    color:var(--accent);
+
+}
+
+#letterText{
+
+    white-space:pre-line;
+
+    line-height:1.8;
+
+    font-size:18px;
+    max-width:520px;
+    margin:auto;
+}
+
+
+#signature{
+
+    margin-top:35px;
+
+    text-align:right;
+
+    color:var(--accent);
+
+    font-size:22px;
+
+}
+
+
+.friendCard{
+
+    opacity:0;
+
+    transform:translateY(30px);
+
+    animation:friendAppear .7s forwards;
+
+}
+
+.friendCard:nth-child(1){animation-delay:.1s;}
+.friendCard:nth-child(2){animation-delay:.2s;}
+.friendCard:nth-child(3){animation-delay:.3s;}
+.friendCard:nth-child(4){animation-delay:.4s;}
+
+@keyframes friendAppear{
+
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+#photo{
+
+    animation:photoFloat 8s ease-in-out infinite;
+
+}
+
+@keyframes photoFloat{
+
+    0%{
+        transform:rotate(3deg) scale(1);
+    }
+
+    50%{
+        transform:rotate(2deg) scale(1.03);
+    }
+
+    100%{
+        transform:rotate(3deg) scale(1);
+    }
+
+}
+
+#playlist{
+
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    flex-direction:column;
+
+    align-items:center;
+
+    padding-top:80px;
+
+    background:#09090B;
+
+    opacity:0;
+    pointer-events:none;
+
+    transition:.8s;
+
+}
+
+#playlist.active{
+
+    opacity:1;
+    pointer-events:auto;
+
+}
+
+#playlist h1{
+
+    color:var(--accent);
+
+    margin-bottom:40px;
+
+    font-size:52px;
+
+}
+
+#songList{
+
+    width:700px;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+.songCard{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+    padding:22px;
+
+    border-radius:18px;
+
+    background:#151515;
+
+    border:2px solid transparent;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.songCard:hover{
+
+    transform:translateX(10px);
+
+    border-color:var(--accent);
+
+}
+
+.songNumber{
+
+    width:55px;
+    height:55px;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:var(--accent);
+
+    font-size:20px;
+
+    color:white;
+
+}
+
+.songInfo h2{
+
+    color:white;
+
+}
+
+.songInfo p{
+
+    color:#888;
+
+}
+
+.activeSong{
+
+    border-color:var(--accent);
+
+    box-shadow:0 0 25px color-mix(in srgb,var(--accent) 40%,transparent);
+
+}
