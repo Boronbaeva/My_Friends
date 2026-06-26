@@ -105,7 +105,7 @@ const friends = [
         {
         title:"Sagynysh",
         artist:"sadraddin",
-        file:"assets/music/Lyuben1.m4a"
+        file:"assets/music/lyuben1.m4a"
     },
 
         {
@@ -185,12 +185,12 @@ const friends = [
         {
         title:"Тачки четыре",
         artist:"ПОЛМАТЕРИ",
-        file:"assets/music/Tachka.m4a"
+        file:"assets/music/tachka.m4a"
     },
     {
         title:"Псы попадут в рай",
         artist:"ПОЛМАТЕРИ",
-        file:"assets/music/Psi.m4a"
+        file:"assets/music/psi.m4a"
     }
 
     ],
@@ -259,7 +259,7 @@ const friends = [
         {
         title:"Пугало",
         artist:"Вольный путь",
-        file:"assets/music/Pugalo.mp3"
+        file:"assets/music/pugalo.mp3"
     },
     // {
     //     title:"Псы попадут в рай",
