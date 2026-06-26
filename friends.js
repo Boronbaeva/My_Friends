@@ -4,11 +4,11 @@ const friends = [
 
     name:"YUJI",
 
-    color:"#dadada",
+    color:"#ffd82b",
 
     avatar:"assets/avatar/yuji.jpg",
 
-    message:"This page exists only for you.",
+    message:"Для солнышка 🤍",
 
     songs:[
 
@@ -99,7 +99,7 @@ const friends = [
 
     avatar:"assets/avatar/lyuben.jpg",
 
-    message:"The strongest.",
+    message:"Для звездочки ✨",
 
     songs:[
         {
@@ -169,11 +169,11 @@ const friends = [
 
     name:"YATO",
 
-    color:"#d89259",
+    color:"#db8641",
 
     avatar:"assets/avatar/YAto.jpg",
 
-    message:"The strongest.",
+    message:"Для человека, которого я рада была встретить 😄",
 
     songs:[
         {
@@ -247,7 +247,7 @@ const friends = [
 
     avatar:"assets/avatar/Hashiramix.jpg",
 
-    message:"The strongest.",
+    message:"Для Дурика 🦊",
 
     songs:[
         {
@@ -322,7 +322,7 @@ const friends = [
 
     avatar:"assets/avatar/Yuxinger.jpg",
 
-    message:"The strongest.",
+    message:"Для человека, который сделал эти месяцы лучше ☄️",
 
     songs:[
         {
@@ -393,11 +393,11 @@ const friends = [
 
     name:"RIN",
 
-    color:"#3a0705",
+    color:"#700b07",
 
     avatar:"assets/avatar/RIN.jpg",
 
-    message:"The strongest.",
+    message:"Для моего брата ☕",
 
     songs:[
         {
@@ -480,7 +480,7 @@ const friends = [
 
     avatar:"assets/avatar/TOKITO.jpg",
 
-    message:"The strongest.",
+    message:"Для того, с кем хочется говорить 🌙",
 
     songs:[
         

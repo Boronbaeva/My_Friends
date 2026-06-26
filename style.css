@@ -213,29 +213,38 @@ body::before{
 
 #friendList{
     display:grid;
-    grid-template-columns:repeat(2, 260px);
-    gap:30px;
-    justify-content:center;
-    margin-top:50px;
+    grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+    gap:20px;
+    width:min(1200px, 95%);
+    margin:40px auto;
+    padding:10px;
+    justify-items:center;
 }
-
 .friendCard{
-    padding:28px;
-    border-radius:20px;
-    background:rgba(255,255,255,.04);
+    width:260px;
+    height:250px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:12px;
+
+    background:rgba(18,20,30,.82);
     border:1px solid rgba(255,255,255,.08);
-    backdrop-filter:blur(10px);
-    text-align:center;
+    border-radius:20px;
+
     cursor:pointer;
-    transition:.35s;
+
+    transition:.3s;
 }
 
 .friendCard:hover{
-    transform:translateY(-8px);
+    transform:translateY(-6px);
     border-color:var(--accent);
-    box-shadow:
-        0 0 30px color-mix(in srgb,var(--accent) 35%,transparent);
+    box-shadow:0 0 25px rgba(70,130,180,.35);
 }
+
 
 .friendAvatar{
     width:110px;

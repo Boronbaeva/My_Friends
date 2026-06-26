@@ -587,12 +587,16 @@ letterBtn.onclick = () => {
     letterPage.classList.add("active");
 
 };
-
 letterBack.onclick = () => {
 
     letterPage.classList.remove("active");
-
     menu.classList.add("active");
+
+    envelopeFlap.style.transform = "";
+    letterPaper.classList.remove("open");
+
+    letterText.textContent = "";
+    signature.textContent = "";
 
 }
 
