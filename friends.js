@@ -15,7 +15,7 @@ const friends = [
 	{
         title:"Kwik Flip",
         artist:"YTPMV",
-        file:"assets/music/Kwik_flip.mp3"
+        file:"assets/music/Kwik.mp3"
     },
     {
         title:"Шелкопряд ",
