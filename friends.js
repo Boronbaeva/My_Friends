@@ -15,7 +15,7 @@ const friends = [
 	{
         title:"Kwik Flip",
         artist:"YTPMV",
-        file:"assets/music/kwik_flip.mp3"
+        file:"assets/music/Kwik_flip.mp3"
     },
     {
         title:"Шелкопряд ",
@@ -30,7 +30,7 @@ const friends = [
 	{
         title:"FUNK DE BELEZA",
         artist:"Feat. Nateki",
-        file:"assets/music/funk_de_beleza.mp3"
+        file:"assets/music/Funk_de_beleza.mp3"
     }
     ],
 
@@ -105,13 +105,13 @@ const friends = [
         {
         title:"Sagynysh",
         artist:"sadraddin",
-        file:"assets/music/lyuben1.m4a"
+        file:"assets/music/Lyuben1.m4a"
     },
 
         {
         title:"Yong and Beautiful",
         artist:"Lana Del Rey",
-        file:"assets/music/lyuben.m4a"
+        file:"assets/music/Lyuben.m4a"
     },
     {
         title:"Brooklyn Baby",
@@ -185,12 +185,12 @@ const friends = [
         {
         title:"Тачки четыре",
         artist:"ПОЛМАТЕРИ",
-        file:"assets/music/tachka.m4a"
+        file:"assets/music/Tachka.m4a"
     },
     {
         title:"Псы попадут в рай",
         artist:"ПОЛМАТЕРИ",
-        file:"assets/music/psi.m4a"
+        file:"assets/music/Psi.m4a"
     }
 
     ],
@@ -259,7 +259,7 @@ const friends = [
         {
         title:"Пугало",
         artist:"Вольный путь",
-        file:"assets/music/pugalo.mp3"
+        file:"assets/music/Pugalo.mp3"
     },
     // {
     //     title:"Псы попадут в рай",
