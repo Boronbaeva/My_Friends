@@ -97,7 +97,7 @@ const friends = [
 
     color:"#c95564",
 
-    avatar:"assets/avatar/lyuben.jpg",
+    avatar:"assets/avatar/Lyuben.jpg",
 
     message:"Для звездочки ✨",
 
@@ -395,7 +395,7 @@ const friends = [
 
     color:"#700b07",
 
-    avatar:"assets/avatar/RIN.jpg",
+    avatar:"assets/avatar/Rin.jpg",
 
     message:"Для моего брата ☕",
 
@@ -478,7 +478,7 @@ const friends = [
 
     color:"#3e8142",
 
-    avatar:"assets/avatar/TOKITO.jpg",
+    avatar:"assets/avatar/Tokito.jpg",
 
     message:"Для того, с кем хочется говорить 🌙",
 
